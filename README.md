@@ -1,2 +1,3 @@
-# QuizProject
-Quiz thing
+# NORTHSTAR Eval
+
+A testing platform developed for low level use cases. 
