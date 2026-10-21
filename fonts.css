@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Nimbus Sans';
+  src: url('./fonts/NimbusSanL-Regu.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nimbus Sans';
+  src: url('./fonts/NimbusSanL-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nimbus Sans';
+  src: url('./fonts/NimbusSanL-ReguItal.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nimbus Sans';
+  src: url('./fonts/NimbusSanL-BoldItal.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nimbus Sans Condensed';
+  src: url('./fonts/NimbusSanL-ReguCond.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nimbus Sans Condensed';
+  src: url('./fonts/NimbusSanL-BoldCond.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nimbus Sans Condensed';
+  src: url('./fonts/NimbusSanL-ReguCondItal.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nimbus Sans Condensed';
+  src: url('./fonts/NimbusSanL-BoldCondItal.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
