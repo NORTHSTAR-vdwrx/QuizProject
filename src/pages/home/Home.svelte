@@ -59,7 +59,16 @@
         <span style="font-weight: 100; font-family:'Montserrat'">WELCOME, </span><br>{username}!
       </h1>
       
-      {#if role}
+      {#if role == "student"}
+        
+      {:else if role == "teacher"}
+        <h1 class="page-title home-page-greeting">
+          <span style="font-weight: 100; font-family:'Montserrat'">TEACHER BLOCK</span>
+        </h1>
+      {:else if role == "administrator"}
+        <h1 class="page-title home-page-greeting">
+          <span style="font-weight: 100; font-family:'Montserrat'">ADMINISTRAOTR</span>
+        </h1>
       {/if}
     
     {/if}
