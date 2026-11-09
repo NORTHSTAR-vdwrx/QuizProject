@@ -1,0 +1,243 @@
+.onboarding-shell {
+  display: grid;
+  min-height: calc(100vh - 72px);
+  box-sizing: border-box;
+  place-items: start center;
+  padding-top: clamp(42px, 8vh, 86px);
+  padding-bottom: 70px;
+}
+
+.onboarding-card {
+  width: min(760px, 100%);
+  box-sizing: border-box;
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid #343630;
+  border-radius: 9px;
+  background: #121310;
+  animation: onboarding-enter 260ms ease-out both;
+}
+
+.onboarding-intro {
+  padding-bottom: 26px;
+  border-bottom: 1px solid #343630;
+}
+
+.onboarding-intro .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 14px;
+  color: #b8c7a8;
+  font: 0.7rem 'Fira Code', monospace;
+  letter-spacing: 0.08em;
+}
+
+.onboarding-intro .eyebrow::before {
+  width: 18px;
+  height: 1px;
+  background: #697565;
+  content: '';
+}
+
+.onboarding-card .page-title {
+  margin: 0 0 10px;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  letter-spacing: -0.035em;
+}
+
+.onboarding-card .page-copy {
+  max-width: 580px;
+  margin: 0;
+  color: #b9b9af;
+}
+
+.onboarding-form {
+  display: grid;
+  gap: 21px;
+  margin-top: 28px;
+}
+
+.onboarding-form label {
+  display: grid;
+  gap: 8px;
+  color: #dedbd0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.onboarding-form label > span {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.onboarding-form label b {
+  color: #a7b49b;
+  font: 0.68rem 'Fira Code', monospace;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.onboarding-form label em {
+  color: #95978d;
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.onboarding-form input,
+.onboarding-form select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 13px;
+  border: 1px solid #41433c;
+  border-radius: 5px;
+  background: #10110f;
+  color: #ecdfcc;
+  font: 400 0.96rem 'Nunito', sans-serif;
+}
+
+.onboarding-form input::placeholder {
+  color: #777a70;
+}
+
+.onboarding-form input:focus,
+.onboarding-form select:focus {
+  border-color: #899780;
+  outline: 2px solid rgb(184 199 168 / 14%);
+}
+
+.onboarding-form small {
+  color: #96988e;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.onboarding-form .field-error {
+  color: #f0c3a7;
+}
+
+.onboarding-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.onboarding-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 5px;
+  padding-top: 20px;
+  border-top: 1px solid #343630;
+}
+
+.onboarding-actions .quiet-action {
+  margin-top: 0;
+}
+
+.onboarding-actions .primary-action {
+  margin-left: auto;
+}
+
+.primary-action {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #77816d;
+  border-radius: 5px;
+  background: #77816d;
+  color: #10110e;
+  font: 700 0.9rem 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+.primary-action:hover,
+.primary-action:focus-visible {
+  border-color: #a7b49b;
+  background: #a7b49b;
+}
+
+.primary-action:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.onboarding-error,
+.onboarding-success,
+.onboarding-status {
+  line-height: 1.55;
+}
+
+.onboarding-error {
+  margin: 0;
+  color: #f0c3a7;
+}
+
+.onboarding-success {
+  margin: 0;
+  color: #b8c7a8;
+}
+
+.onboarding-error-box {
+  margin-top: 26px;
+  padding: 18px;
+  border: 1px solid #5b4539;
+  border-left: 2px solid #d59a76;
+  border-radius: 4px;
+  background: #1a1714;
+  color: #f0c3a7;
+  line-height: 1.55;
+}
+
+.onboarding-error-box p {
+  margin: 0 0 12px;
+}
+
+.onboarding-error-box .quiet-action {
+  color: #c7d4b8;
+}
+
+@keyframes onboarding-enter {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 560px) {
+  .onboarding-two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .onboarding-actions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .onboarding-actions .primary-action {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .onboarding-actions .quiet-action {
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .onboarding-card,
+  .primary-action {
+    animation: none;
+    transition: none;
+  }
+}

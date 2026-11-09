@@ -23,7 +23,7 @@
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
           body: JSON.stringify(
-            isLogin ? { username, password } : { username, email, password }
+            isLogin ? { email, password } : { username, email, password }
           )
         }
       );
@@ -41,8 +41,11 @@
       }
 
       if (isLogin) {
-        window.location.assign('/');
+        const onboardingPending = sessionStorage.getItem('eval-onboarding-pending') === 'true';
+        if (onboardingPending) sessionStorage.removeItem('eval-onboarding-pending');
+        window.location.assign(onboardingPending ? '/onboarding/' : '/home/');
       } else {
+        sessionStorage.setItem('eval-onboarding-pending', 'true');
         accountCreated = true;
       }
     } catch (error) {
@@ -76,7 +79,7 @@
         <div class="auth-success" role="status">
           <h2>You're all set.</h2>
           <p>Your account was created. Log in to get started.</p>
-          <a class="auth-button auth-button-link" href="/login/">Continue to log in</a>
+          <a class="auth-button auth-button-link" href="/login/">Continue to log in and set up your profile</a>
         </div>
       {:else}
         <div class="auth-form-heading">
@@ -85,13 +88,23 @@
 
         <form class="auth-form" onsubmit={handleSubmit}>
           <label>
-            <span>Username</span>
-            <input
-              bind:value={username}
-              name="username"
-              autocomplete="username"
-              required
-            />
+            <span>{isLogin ? 'Email' : 'Username'}</span>
+            {#if isLogin}
+              <input
+                bind:value={email}
+                type="email"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            {:else}
+              <input
+                bind:value={username}
+                name="username"
+                autocomplete="username"
+                required
+              />
+            {/if}
           </label>
 
           {#if !isLogin}

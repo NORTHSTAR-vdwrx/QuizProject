@@ -12,7 +12,8 @@ export default defineConfig({
         quiz: fileURLToPath(new URL('./quiz/index.html', import.meta.url)),
         results: fileURLToPath(new URL('./results/index.html', import.meta.url)),
         login: fileURLToPath(new URL('./login/index.html', import.meta.url)),
-        register: fileURLToPath(new URL('./register/index.html', import.meta.url))
+        register: fileURLToPath(new URL('./register/index.html', import.meta.url)),
+        onboarding: fileURLToPath(new URL('./onboarding/index.html', import.meta.url))
       }
     }
   }
